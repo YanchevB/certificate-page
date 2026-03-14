@@ -1,28 +1,53 @@
+import { useState } from 'react';
+import { certificates } from './data/certificates';
+import ShelfRow from './components/ShelfRow';
+import MobileStack from './components/MobileStack';
+import Lightbox from './components/Lightbox';
+
+function chunkArray(arr, size) {
+  const chunks = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
 function App() {
+  const [activeCert, setActiveCert] = useState(null);
+  const shelves = chunkArray(certificates, 4);
+
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans p-6 md:p-12">
-      
-      {/* Header Section */}
-      <header className="max-w-5xl mx-auto mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 mb-4">
+    <div className="min-h-screen bg-gray-100 text-gray-800 font-sans">
+
+      {/* Header */}
+      <header className="max-w-6xl mx-auto pt-12 pb-8 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
           My JS Journey
         </h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-500">
           A collection of my JavaScript and web development certificates.
         </p>
       </header>
 
-      {/* Main Content Area (Where the grid will go) */}
-      <main className="max-w-5xl mx-auto">
-        <div className="p-8 border-4 border-dashed border-gray-300 rounded-xl text-center text-gray-400">
-          <p>This is where our CertGrid component will go!</p>
-        </div>
+      {/* Desktop: Shelf rows */}
+      <main className="hidden md:block max-w-6xl mx-auto px-6 pb-16">
+        {shelves.map((row, i) => (
+          <ShelfRow key={i} certificates={row} onOpen={setActiveCert} />
+        ))}
       </main>
 
-      {/* Footer Section */}
-      <footer className="max-w-5xl mx-auto mt-16 text-center text-sm text-gray-500">
+      {/* Mobile: Stacked deck */}
+      <main className="block md:hidden max-w-sm mx-auto pt-4">
+        <MobileStack certificates={certificates} onOpen={setActiveCert} />
+      </main>
+
+      {/* Footer */}
+      <footer className="max-w-6xl mx-auto pb-8 text-center text-sm text-gray-400">
         <p>© {new Date().getFullYear()} Boyan Yanchev. Built with React & Tailwind.</p>
       </footer>
+
+      {/* Lightbox */}
+      <Lightbox cert={activeCert} onClose={() => setActiveCert(null)} />
 
     </div>
   );
