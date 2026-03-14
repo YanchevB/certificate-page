@@ -57,6 +57,7 @@ export const certificates = [
         title: "SEO Foundations",
         issuer: "LinkedIn Learning",
         date: "25.03.2024",
-        images: [seoFoundations]
+        images: [seoFoundations],
+        imageContain: true
     }
 ];
