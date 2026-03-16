@@ -20,12 +20,12 @@ function App() {
     <div className="min-h-screen bg-gray-100 text-gray-800 font-sans">
 
       {/* Header */}
-      <header className="max-w-6xl mx-auto pt-12 pb-8 px-6 text-center">
+      <header className="max-w-6xl mx-auto pt-12 pb-12 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
-          My JS Journey
+          Certificates
         </h1>
         <p className="text-lg text-gray-500">
-          A collection of my JavaScript and web development certificates.
+          A collection of my JavaScript and web development certificates, as well as other studies connected to web development.
         </p>
       </header>
 
