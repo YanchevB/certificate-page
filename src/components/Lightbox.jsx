@@ -3,14 +3,9 @@ import { useState, useEffect } from 'react';
 export default function Lightbox({ cert, onClose }) {
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Reset page when cert changes and preload all images
+  // Reset page when cert changes
   useEffect(() => {
     setCurrentPage(0);
-    if (!cert) return;
-    cert.images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
   }, [cert]);
 
   // Lock body scroll and handle Escape key
@@ -55,13 +50,15 @@ export default function Lightbox({ cert, onClose }) {
 
         {/* Image area */}
         <div className="relative overflow-hidden bg-gray-50">
-          <img
-            key={currentPage}
-            src={cert.images[currentPage]}
-            alt={`${cert.title} — page ${currentPage + 1}`}
-            className="max-h-[75vh] max-w-[90vw] object-contain block
-                       animate-[fadeIn_0.15s_ease-out]"
-          />
+          {cert.images.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${cert.title} — page ${i + 1}`}
+              className="max-h-[75vh] max-w-[90vw] object-contain"
+              style={{ display: i === currentPage ? 'block' : 'none' }}
+            />
+          ))}
 
           {/* Left arrow */}
           {isMultiPage && currentPage > 0 && (

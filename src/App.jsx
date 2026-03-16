@@ -16,6 +16,7 @@ function App() {
   const [activeCert, setActiveCert] = useState(null);
   const shelves = chunkArray(certificates, 4);
 
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 font-sans">
 
@@ -45,6 +46,13 @@ function App() {
       <footer className="max-w-6xl mx-auto pb-8 text-center text-sm text-gray-400">
         <p>© {new Date().getFullYear()} Boyan Yanchev. Built with React & Tailwind.</p>
       </footer>
+
+      {/* Preload all certificate images */}
+      <div className="hidden" aria-hidden="true">
+        {certificates.flatMap(cert => cert.images).map(src => (
+          <img key={src} src={src} alt="" />
+        ))}
+      </div>
 
       {/* Lightbox */}
       <Lightbox cert={activeCert} onClose={() => setActiveCert(null)} />
