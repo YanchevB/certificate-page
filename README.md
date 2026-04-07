@@ -5,7 +5,10 @@ A lightweight, responsive web application built to showcase my JavaScript and we
 ## Tech Stack
 * **Framework:** React (via Vite)
 * **Styling:** Tailwind CSS v4
-* **Deployment:** (Coming soon)
+* **Deployment:** Vercel
+
+## Live Demo
+[https://certificates-page.vercel.app/](https://certificates-page.vercel.app/)
 
 ## Running Locally
 To run this project on your own machine:
