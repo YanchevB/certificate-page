@@ -14,6 +14,9 @@ import jsApps2 from '../assets/certs/JS Applications - October 2025 - Certificat
 import htmlCss1 from '../assets/certs/HTML & CSS - January 2026 - Certificate-1.png';
 import htmlCss2 from '../assets/certs/HTML & CSS - January 2026 - Certificate-2.png';
 
+import ts1 from '../assets/certs/TypeScript - February 2026 - Certificate-1.png';
+import ts2 from '../assets/certs/TypeScript - February 2026 - Certificate-2.png';
+
 import seoFoundations from '../assets/certs/CertificateOfCompletion_SEO Foundations.png';
 
 export const certificates = [
@@ -54,6 +57,13 @@ export const certificates = [
     },
     {
         id: 6,
+        title: "TypeScript",
+        issuer: "SoftUni",
+        date: "09.04.2026",
+        images: [ts1, ts2]
+    },
+    {
+        id: 7,
         title: "SEO Foundations",
         issuer: "LinkedIn Learning",
         date: "25.03.2024",
