@@ -19,6 +19,9 @@ import ts2 from '../assets/certs/TypeScript - February 2026 - Certificate-2.png'
 
 import seoFoundations from '../assets/certs/CertificateOfCompletion_SEO Foundations.png';
 
+import postgreSQL1 from '../assets/certs/PostgreSQL - May 2026 - Certificate-1.png'
+import postgreSQL2 from '../assets/certs/PostgreSQL - May 2026 - Certificate-2.png'
+
 export const certificates = [
     {
         id: 1,
@@ -69,5 +72,12 @@ export const certificates = [
         date: "25.03.2024",
         images: [seoFoundations],
         imageContain: true
+    },
+    {
+        id: 8,
+        title: "PostgreSQL",
+        issuer: "SoftUni",
+        date: "15.06.2026",
+        images: [postgreSQL1, postgreSQL2],
     }
 ];
