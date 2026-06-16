@@ -67,17 +67,17 @@ export const certificates = [
     },
     {
         id: 7,
+        title: "PostgreSQL",
+        issuer: "SoftUni",
+        date: "15.06.2026",
+        images: [postgreSQL1, postgreSQL2],
+    },
+    {
+        id: 8,
         title: "SEO Foundations",
         issuer: "LinkedIn Learning",
         date: "25.03.2024",
         images: [seoFoundations],
         imageContain: true
-    },
-    {
-        id: 8,
-        title: "PostgreSQL",
-        issuer: "SoftUni",
-        date: "15.06.2026",
-        images: [postgreSQL1, postgreSQL2],
     }
 ];
